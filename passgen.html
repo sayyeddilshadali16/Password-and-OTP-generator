@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .mainbox {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url("https://plus.unsplash.com/premium_photo-1663100722417-6e36673fe0ed?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            position: relative;
+        }
+
+        .boxone {
+            height: 200px;
+            width: 300px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 650px;
+            margin: 40px;
+            padding: 35px;
+            background-color: rgba(255, 255, 255, 0.052);
+            backdrop-filter: blur(40px);
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        .boxtwo {
+            height: 200px;
+            width: 300px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 588px;
+            top: 200px;
+            margin: 102px;
+            padding: 46px;
+            background-color: rgba(255, 255, 255, 0.052);
+            backdrop-filter: blur(40px);
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        #btn1{
+            padding: 7px;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-left: 33px;
+            background-color: rgb(22, 22, 172);
+            color: white;
+        }
+        #btn2{
+            padding: 7px;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-left: 45px;
+            background-color: rgb(22, 22, 172);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="boxone">
+            <h1 id="headone">--------</h1>
+            <button id="btn1" onclick="passwordGenerator()">Password Suggestion</button>
+        </div>
+        <div class="boxtwo">
+            <h1 id="headtwo">------</h1>
+            <button id="btn2" onclick="otpGenerator()">Generate OTP</button>
+        </div>
+    </div>
+    <script>
+        function passwordGenerator() {
+            var upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+            var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+            var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+            var char = ['!', '@', '#', '$', '%', '^', '&', '*'];
+
+            var a = Math.floor(Math.random() * 25);
+            var b = Math.floor(Math.random() * 25);
+            var c = Math.floor(Math.random() * 25);
+            var d = Math.floor(Math.random() * 25);
+            var e = Math.floor(Math.random() * 25);
+            var f = Math.floor(Math.random() * 9);
+            var g = Math.floor(Math.random() * 9);
+            var h = Math.floor(Math.random() * 7);
+
+            var uppcase = upper[a];
+            var lowcase1 = lower[b];
+            var lowcase2 = lower[c];
+            var lowcase3 = lower[d];
+            var lowcase4 = lower[e];
+            var number1 = num[f];
+            var number2 = num[g];
+            var character = char[h];
+
+            var passgen = uppcase + lowcase1+lowcase2+lowcase3+lowcase4+number1+number2+character;
+
+            document.getElementById('headone').innerHTML = passgen;
+        }
+
+        function otpGenerator() {
+            var num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+            var u = Math.floor(Math.random() * 9);
+            var v = Math.floor(Math.random() * 9);
+            var w = Math.floor(Math.random() * 9);
+            var x = Math.floor(Math.random() * 9);
+            var y = Math.floor(Math.random() * 9);
+            var z = Math.floor(Math.random() * 9);
+
+            var otp1 = num1[u].toString();
+            var otp2 = num1[v].toString();
+            var otp3 = num1[w].toString();
+            var otp4 = num1[x].toString();
+            var otp5 = num1[y].toString();
+            var otp6 = num1[z].toString();
+            
+            var otpgen = otp1 + otp2 + otp3 + otp4 + otp5 + otp6;
+
+            document.getElementById('headtwo').innerHTML = otpgen;
+        }
+    </script>
+
+</body>
+
+</html>
